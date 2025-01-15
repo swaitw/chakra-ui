@@ -1,0 +1,297 @@
+---
+title: Version 3.x
+description:
+  Explore the changelog for Chakra UI version 3.x. Learn about the latest
+  features, bug fixes, and improvements.
+---
+
+## [3.3.1](./#3.3.1) - 2025-01-12
+
+### Fixed
+
+- **HoverCard, Tooltip**: Resolved an issue where the controlled open state
+  could become inconsistent during the `opening` or `closing` phases.
+
+- **System**: Fix issue where `useRecipe` and `useSlotRecipe` returns `never`
+  when key does not match built-in recipe.
+
+## [3.3.0](./#3.3.0) - 2025-01-09
+
+### Added
+
+- **[New] QRCode**: Add new component for converting text and links to QR codes.
+
+```tsx
+<QrCode.Root value="..." size="md">
+  <QrCode.Frame>
+    <QrCode.Pattern />
+  </QrCode.Frame>
+</QrCode.Root>
+```
+
+- **Clipboard**: Introduced `Clipboard.ValueText` to display clipboard content.
+
+- **FileUpload**
+
+  - Added `preventDropOnDocument` to block file drops on the document when the
+    file upload component is active.
+
+  - Added `setClipboardFiles` to the API for setting files from clipboard data.
+
+- **Progress**: Added support for`onValueChange` and `defaultValue`.
+
+- **Tabs, Menu**: Added `navigate` property for custom router navigation when
+  selections render as links.
+
+- **CLI**: Add support for `--tsx` flag in the `snippet add` command to allow
+  explicitly specifying tsx/jsx file generation.
+
+```bash
+npx @chakra-ui/cli snippet add [...components] --tsx
+```
+
+- **[New] Panda**: Initial release of `@chakra-ui/panda-preset`. This allows you
+  to use Chakra's design system in a Panda CSS project.
+
+### Fixed
+
+- **Collapsible**: Fixed a bug where the opening animation replayed when an open
+  collapsible was re-rendered.
+
+- **Dialog, Popover**: Fixed an issue causing dialogs or popovers to close if
+  the focused element was removed from the DOM.
+
+- **FileUpload**: Fixed a bug causing the hidden input to be out of sync with
+  accepted files.
+
+- **Menu, Popover**: Fixed inconsistent interaction detection outside the
+  component when the trigger was inside a scrollable container.
+
+- **Pagination**: Corrected an issue where the page range returned an incorrect
+  `end` value when `pageSize` exceeded `count`.
+
+- **Image**: Fix issue where `htmlWidth` and `htmlHeight` doesn't work in
+  `Image` or `chakra.image` elements.
+
+- **System**
+
+  - Improve typesafety for layer styles to support common shorthands like `bg`,
+    `bgColor`, `bgImage`.
+  - Fix compound variant matching not working with `colorPalette` prop.
+
+## [3.2.5](./#3.2.5) - 2025-01-04
+
+### Fixed
+
+- **useMediaQuery**: Fix issue where partial media queries like
+  `aspect-ratio < 1` doesn't return the correct result.
+
+  > **Good to know**: Partial media queries like `aspect-ratio < 1` resolves to
+  > `aspect-ratio < 1 / 1` in the browser.
+
+- **System**
+
+  - Improve type-safety in `useRecipe` and `useSlotRecipe` hooks
+  - Fix issue where composing `Input` component throws `asChild` React HTML prop
+    warning.
+  - Fix issue where `mergeConfigs` does not override functions
+
+- **Snippets / Pagination**: Fix issue where pagination page text renders
+  incorrectly when the `pageSize` is greater than the `count` value with
+  `format=long`
+
+- **Snippets / InputGroup**: Improve typings for `children` prop to prevent TS
+  errors
+
+- **FileUpload**: Resolved an issue where the `accept` attribute wasn’t applied
+  to the hidden input.
+
+- **NumberInput**: Fixed issue where the input event wasn’t triggered on the
+  first click of the increment/decrement controls.
+
+## [3.2.4](./#3.2.4) - 2024-12-30
+
+### Fixed
+
+- Fix issue where component hook props (like `UseCheckboxProps`,
+  `UseCheckboxGroupProps`, etc.) are not exported.
+
+- **System**: Fix issue where `chakra.x` factory component props throws TS error
+  in React 19
+
+## [3.2.3](./#3.2.3) - 2024-12-05
+
+### Fixed
+
+- **System**: Fix issue where responsive semantic tokens doesn't work as
+  expected
+
+## [3.2.2](./#3.2.2) - 2024-11-29
+
+### Fixed
+
+- **Slider**
+
+  - Add `DraggingIndicator` component to show an element only while dragging
+  - Fix issue where slider marks were not styled correctly in vertical
+    orientation
+
+- **Menu**: Update recipe to use `--available-height` css variable to keep the
+  menu's height within the available space
+
+- **System**: Fixed issue where exporting `withRootProvider` would result in
+  type error
+
+- **Snippets / Slider**
+
+  - Move `MarkerGroup` into the `Control` component
+  - Remove hardcoded margin values in favor of recipes and `data-has-mark-label`
+    attribute
+
+- **CLI**: Output the real version from `package.json`
+
+## [3.2.1](./#3.2.1) - 2024-11-26
+
+### Fixed
+
+- **System**: Fix issue where exporting `withProvider` and `withContext` would
+  result in type error
+
+- **Timeline**: Fix issue where `TimelineTitle` was missing from the export
+
+- **Tabs**: Fix issue where `useTabs` and `useTabsContext` were not exported
+
+- **Snippets / ColorPicker**: Fix flex direction of `ColorPickerChannelInputs`
+  and `ColorPickerChannelSliders`
+
+- **CLI**
+
+  - Fix issue where npmDependencies for snippets were not auto-installed
+  - Support React Router 7 framework detection
+
+## [3.2.0](./#3.2.0) - 2024-11-20
+
+### Added
+
+- **Input:** Add support for `use-mask-input` library to mask the input shape
+
+- **CLI**: Add support for `--all` flag to add all snippets. By default, we only
+  install a minimal/recommended set of snippets
+
+  > **Recommended snippets:** provider, avatar, button, checkbox, radio,
+  > input-group, slider, popover, dialog, drawer, tooltip, field
+
+  If you want to add all snippets, you can use the `--all` flag
+
+- **[Preview]** Add new `ColorPicker` component to allow users pick a color in
+  hsl, rgb, hsb formats
+
+- **[Preview]** Add new `ColorSwatch` component to preview a color
+
+### Fixed
+
+- **System**: Fix issue where `mergeConfigs` mutates the underlying configs
+  passed to it
+
+- **CLI:** Fix issue where typegen doesn't work when CLI installed globally or
+  run using `npx`
+
+## [3.1.2](./#3.1.2) - 2024-11-15
+
+### Fixed
+
+- **General:** Fix issue where value change types and components were not
+  re-exported from Ark UI
+
+- **Layer Style:** Fix issue where `fill.surface` layer style doesn't render the
+  correct styles
+
+- **Snippets / Pagination:** Fix issue where `PaginationPageText` did not render
+  the correct page range
+
+## [3.1.1](./#3.1.1) - 2024-11-09
+
+### Fixed
+
+- **Checkbox**: Fix issue where checkmark doesn't show on Safari
+
+- **Alert**: Fix issue where indicator icon is not visible on Safari
+
+- **ClientOnly**: Fix issue where returned the incorrect type leading to TS
+  error like `ClientOnly cannot be used as a JSX component.`
+
+- **Fieldset**: Fix issue where anatomy is not exported
+
+- **Timeline**: Refactor variants such that it responds to `colorPalette`
+
+- **useBreakpointValue**: Fix issue where hook throws error if `ssr` is `false`
+
+## [3.1.0](./#3.1.0) - 2024-11-04
+
+### Fixed
+
+- **CLI**: Fix issue where adding a snippet with `--outdir` still creates
+  snippets a `src/components/ui` directory.
+
+- **System:** Fix issue where using `as` prop with logic based components
+  doesn't work as expected.
+
+### Added
+
+- **DataList:** Add support for `bold` variant.
+
+- **Toggle:** Add `Toggle` component for toggling between two states. It
+  composes the `Button` component.
+
+### Changed
+
+- **Button:** Tweak the horizontal padding when size is `sm`.
+
+- **Snippets**
+
+  - Slider: Add `showValue` prop to render the text value of the slider.
+
+  - Select
+
+    - Add `HiddenSelect` to ensure it works in form submissions.
+    - Fix type inference is lost when using `SelectRoot` component from snippet
+    - Fix issue where form data is not populated when using native form element
+
+  - ColorMode: Fix type error when using the latest `next-themes`.
+
+  - Provider: Forward props to `ColorModeProvider` powered by `next-themes` for
+    better customization.
+
+## [3.0.2](./#3.0.2) - 2024-10-29
+
+### Changed
+
+- **Snippets / Toaster**: Improve toaster styling by adding
+  `width={{ md: "sm" }}` to the toast root.
+
+### Fixed
+
+- **InputAddon**: Fix issue with input addon not stretched correctly.
+
+- **CLI**
+
+  - Fix issue with vite setup where `.mjs` and `mts` files were not considered.
+  - Fix issue where style props types show as `any` when using `strictTokens`.
+
+## [3.0.1](./#3.0.1) - 2024-10-25
+
+### Changed
+
+- Improve placeholder and selection styles
+
+### Fixed
+
+- Fix for custom keyframes not being picked up by autocomplete
+- Fix issue where `scrollBehavior=outside` doesn't allow scrolling outside the
+  dialog content
+
+## [3.0.0](./#3.0.0) - 2024-10-22
+
+### Changed
+
+Visit the [Migration Guide](https://chakra-ui.com/docs/get-started/migration)

@@ -1,0 +1,84 @@
+---
+title: Button
+description: Used to trigger an action or event
+links:
+  source: components/button
+  storybook: components-button--basic
+  recipe: button
+---
+
+<ExampleTabs name="button-basic" />
+
+## Setup
+
+If you don't already have the snippet, run the following command to add the
+`button` snippet
+
+```sh
+npx @chakra-ui/cli snippet add button
+```
+
+The snippet includes enhances the Button with `loading` and `loadingText` props.
+
+## Usage
+
+```jsx
+import { Button } from "@/components/ui/button"
+```
+
+```jsx
+<Button>Click me</Button>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the button.
+
+<ExampleTabs name="button-with-sizes" />
+
+### Variants
+
+Use the `variant` prop to change the visual style of the Button.
+
+<ExampleTabs name="button-with-variants" />
+
+### Icon
+
+Use icons within a button
+
+<ExampleTabs name="button-with-icons" />
+
+### Color
+
+Use the `colorPalette` prop to change the color of the button
+
+<ExampleTabs name="button-with-colors" />
+
+### Loading
+
+Use the `loading` and `loadingText` prop to show a loading spinner
+
+<ExampleTabs name="button-with-loading" />
+
+### Group
+
+Use the `Group` component to group buttons together
+
+<ExampleTabs name="button-with-group" />
+
+### Ref
+
+Here's how to access the underlying element reference
+
+```tsx
+const Demo = () => {
+  const ref = useRef<HTMLButtonElement | null>(null)
+  return <Button ref={ref}>Click me</Button>
+}
+```
+
+## Props
+
+<PropTable component="Button" part="Button" />

@@ -1,0 +1,137 @@
+---
+title: Avatar
+description: Used to represent user profile picture or initials
+links:
+  source: components/avatar
+  storybook: components-avatar--basic
+  recipe: avatar
+  ark: https://ark-ui.com/react/docs/components/avatar
+---
+
+<ExampleTabs name="avatar-basic" />
+
+## Setup
+
+If you don't already have the snippet, run the following command to add the
+`avatar` snippet
+
+```sh
+npx @chakra-ui/cli snippet add avatar
+```
+
+The snippet includes a closed component composition for the `Avatar` and
+`AvatarGroup` components.
+
+## Usage
+
+```jsx
+import { Avatar, AvatarGroup } from "@/components/ui/avatar"
+```
+
+```jsx
+<AvatarGroup>
+  <Avatar />
+</AvatarGroup>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the avatar
+
+<ExampleTabs name="avatar-with-sizes" />
+
+### Variants
+
+Use the `variant` prop to change the variant of the avatar
+
+<ExampleTabs name="avatar-with-variants" />
+
+### Shape
+
+Use the `shape` prop to change the shape of the avatar, from `rounded` to
+`square`
+
+<ExampleTabs name="avatar-with-shape" />
+
+### Fallback
+
+The initials of the name can be used as a fallback when the `src` prop is not
+provided or when the image fails to load.
+
+<ExampleTabs name="avatar-with-fallback" />
+
+### Random Color
+
+Combine the `colorPalette` prop with some custom logic to dynamically change the
+color of the avatar
+
+<ExampleTabs name="avatar-with-random-color" />
+
+### Ring
+
+Use the `outline*` props to add a ring around the avatar
+
+<ExampleTabs name="avatar-with-ring" />
+
+### Group
+
+Use the `Group` component to group multiple avatars together
+
+<ExampleTabs name="avatar-with-group" />
+
+### Stacking
+
+When using the `AvatarGroup` component, you can use the `stacking` prop to
+change the stacking order of the avatars
+
+<ExampleTabs name="avatar-group-with-stacking" />
+
+### Persona
+
+Here's an example of how to use the `Avatar` component to display a user
+persona.
+
+<ExampleTabs name="avatar-persona" />
+
+### Badge
+
+Show a badge on the right corner of the avatar by composing the `Float` and
+`Circle` components
+
+<ExampleTabs name="avatar-with-badge" />
+
+### Overflow
+
+Here's an example of how to handle an overflow of avatars by composing the
+`Menu` and `Avatar` components.
+
+<ExampleTabs name="avatar-with-overflow" />
+
+### Without Snippet
+
+Here's an example of how to use the `Avatar` without the snippet.
+
+<ExampleTabs name="avatar-without-snippet" />
+
+### Store
+
+An alternative way to access the avatar state and methods is to use the
+`RootProvider` component and the `useAvatar` store hook.
+
+<ExampleTabs name="avatar-with-store" />
+
+## Props
+
+### Root
+
+<PropTable component="Avatar" part="Root" />
+
+### Fallback
+
+<PropTable component="Avatar" part="Fallback" />
+
+### Image
+
+<PropTable component="Avatar" part="Image" />

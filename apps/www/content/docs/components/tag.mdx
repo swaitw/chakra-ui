@@ -1,0 +1,95 @@
+---
+title: Tag
+description: Used for categorizing or labeling content
+links:
+  source: components/tag
+  storybook: components-tag--basic
+  recipe: tag
+---
+
+<ExampleTabs name="tag-basic" />
+
+## Setup
+
+If you don't already have the snippet, run the following command to add the
+`tag` snippet
+
+```sh
+npx @chakra-ui/cli snippet add tag
+```
+
+The snippet includes a closed component composition for the `Tag` component.
+
+## Usage
+
+```jsx
+import { Tag } from "@/components/ui/tag"
+```
+
+```jsx
+<Tag>Tag here</Tag>
+```
+
+## Examples
+
+### Icon
+
+Use the `startElement` prop to add an icon to the tag.
+
+<ExampleTabs name="tag-with-icon" />
+
+### Variants
+
+Use the `variant` prop to change the appearance of the tag.
+
+<ExampleTabs name="tag-with-variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the tag.
+
+<ExampleTabs name="tag-with-sizes" />
+
+### Colors
+
+Use the `colorPalette` prop to change the color of the tag.
+
+<ExampleTabs name="tag-with-colors" />
+
+### Closable
+
+Use the `closable` prop to make the tag closable.
+
+<ExampleTabs name="tag-with-close" />
+
+### Overflow
+
+Use the `maxWidth` prop to control the maximum width of the tag. When the
+content exceeds this width, it will be truncated with an ellipsis.
+
+> This is particularly useful when dealing with dynamic or user-generated
+> content where the length might vary.
+
+<ExampleTabs name="tag-with-overflow" />
+
+### Avatar
+
+The tag component has been designed to work well with the `Avatar` component.
+
+> Note: Set the avatar size to `full` to ensure it's sized correctly.
+
+<ExampleTabs name="tag-with-avatar" />
+
+### Render as button
+
+Use the `asChild` prop to render the tag as a button.
+
+> Note: Import the Tag from `@chakra-ui/react` to use this prop.
+
+<ExampleTabs name="tag-as-button" />
+
+## Props
+
+### Root
+
+<PropTable component="Tag" part="Root" />
