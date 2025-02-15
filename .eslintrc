@@ -3,29 +3,27 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 10,
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "project": "./tsconfig.build.json",
   },
   "extends": [
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "airbnb-typescript",
     "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint"
-  ],
-  "plugins": [
-    "react-hooks",
-    "@typescript-eslint/eslint-plugin",
-    "testing-library"
   ],
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
   },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin", "testing-library"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-use-before-define": "off",
@@ -34,6 +32,7 @@
     "jsx-a11y/no-autofocus": "off",
     "react/forbid-prop-types": "off",
     "import/prefer-default-export": "off",
+    "import/export": "off",
     "no-underscore-dangle": "off",
     "no-shadow": "off",
     "no-plusplus": "off",
@@ -42,6 +41,7 @@
     "react/no-danger": "off",
     "react/button-has-type": "off",
     "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
     "operator-assignment": "off",
     "prefer-destructuring": "off",
     "react/no-children-prop": "off",
@@ -60,7 +60,7 @@
     "no-alert": "off",
     "react/jsx-filename-extension": [
       "error",
-      { "extensions": [".js", ".tsx"] }
+      { "extensions": [".js", ".tsx"] },
     ],
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
@@ -72,14 +72,6 @@
     "import/no-named-as-default": "off",
     "prefer-object-spread": "off",
     "arrow-body-style": "off",
-    "react/sort-comp": "off"
+    "react/sort-comp": "off",
   },
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "parserOptions": {
-        "project": ["tsconfig.json"]
-      }
-    }
-  ]
 }

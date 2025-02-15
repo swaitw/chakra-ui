@@ -1,5 +1,5 @@
 import { create } from "@storybook/theming"
-// @ts-ignore
+// @ts-expect-error
 import brandImage from "./storybook-logo.svg"
 
 export default create({
